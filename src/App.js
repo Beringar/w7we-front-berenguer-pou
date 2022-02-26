@@ -23,7 +23,7 @@ function App() {
         dispatch(setUserAction({ id, name, username }));
       }
     })();
-  }, [dispatch, user]);
+  }, [dispatch]);
 
   return (
     <>
