@@ -12,9 +12,9 @@ function App() {
       <Routes>
         <Route path="/" element={<UsersPage myNetwork={true} />} />
         <Route path="/users" element={<UsersPage myNetwork={false} />} />
-        <Route path="/user">
+        <Route path="/user" element={<ProfilePage />}>
           <Route path=":id" element={<ProfilePage />} />
-          <Route path="edit/:id" element={<EditUserPage />} />
+          <Route path="edit" element={<EditUserPage />} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<NotFoundPage />} />
