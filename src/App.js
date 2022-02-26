@@ -6,10 +6,24 @@ import EditUserPage from "./pages/EditUserPage";
 import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Header from "./components/Header/Header";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import jwt_decode from "jwt-decode";
+import { setUserAction } from "./redux/actions/actionsCreators";
+import { useEffect } from "react";
 
 function App() {
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    (async () => {
+      const token = localStorage.getItem("userToken");
+      if (token) {
+        const { id, name, username } = await jwt_decode(token);
+        dispatch(setUserAction({ id, name, username }));
+      }
+    })();
+  }, [dispatch, user]);
 
   return (
     <>
