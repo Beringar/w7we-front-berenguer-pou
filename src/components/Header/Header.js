@@ -49,7 +49,7 @@ const Header = ({ user }) => {
     <>
       <HeaderContainer>
         <Links />
-        {user.name && <span>{`Hola ${user.name}`}</span>}
+        {user.username && <span>{`Logged in as ${user.username}`}</span>}
       </HeaderContainer>
     </>
   );
