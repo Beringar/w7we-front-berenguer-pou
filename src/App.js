@@ -5,10 +5,12 @@ import ProfilePage from "./pages/ProfilePage";
 import EditUserPage from "./pages/EditUserPage";
 import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
+      <Header user={{ name: "Pepe" }} />
       <Routes>
         <Route path="/" element={<UsersPage myNetwork={true} />} />
         <Route path="/users" element={<UsersPage myNetwork={false} />} />
