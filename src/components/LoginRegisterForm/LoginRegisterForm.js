@@ -4,6 +4,7 @@ import { loginUserThunk } from "../../redux/thunks/userThunks";
 
 const LoginRegisterForm = () => {
   const dispatch = useDispatch();
+
   const initialFormData = {
     username: "",
     password: "",
