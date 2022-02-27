@@ -4,16 +4,13 @@ const Links = () => {
   return (
     <ul>
       <li>
-        <Link to="/">My network</Link>
-      </li>
-      <li>
         <Link to="users">All Users</Link>
       </li>
       <li>
-        <Link to="user">My profile</Link>
+        <Link to="/">My network</Link>
       </li>
       <li>
-        <Link to="/">Login</Link>
+        <Link to="user">My profile</Link>
       </li>
     </ul>
   );
