@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUserThunk } from "../../redux/thunks/userThunks";
 
-const LoginRegisterForm = () => {
+const LoginForm = () => {
   const dispatch = useDispatch();
 
   const initialFormData = {
@@ -76,4 +76,4 @@ const LoginRegisterForm = () => {
   );
 };
 
-export default LoginRegisterForm;
+export default LoginForm;

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import LoginRegisterForm from "../components/LoginRegisterForm/LoginRegisterForm";
+import LoginForm from "../components/LoginForm/LoginForm";
 
 const LoginPage = () => {
   const user = useSelector((state) => state.user);
@@ -15,7 +15,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <main className="main">{!user.username && <LoginRegisterForm />}</main>
+      <main className="main">{!user.username && <LoginForm />}</main>
     </>
   );
 };
