@@ -30,8 +30,8 @@ function App() {
       <Header user={user} />
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/mynetwork" element={<UsersPage myNetwork={true} />} />
         <Route path="/users" element={<UsersPage myNetwork={false} />} />
+        <Route path="/mynetwork" element={<UsersPage myNetwork={true} />} />
         <Route path="/user" element={<ProfilePage />}>
           <Route path=":id" element={<ProfilePage />} />
           <Route path="edit" element={<EditUserPage />} />
