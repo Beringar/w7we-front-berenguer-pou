@@ -1,4 +1,8 @@
-import { faEye, faHeart, faSwords } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEye,
+  faHeart,
+  faSkullCrossbones,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
@@ -48,7 +52,7 @@ const User = ({ className, user }) => {
         />
         <FontAwesomeIcon
           className="user-icons"
-          icon={faSwords}
+          icon={faSkullCrossbones}
           onClick={setEnemy}
           size="2x"
         />

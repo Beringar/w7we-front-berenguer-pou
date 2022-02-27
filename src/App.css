@@ -67,6 +67,7 @@ button:disabled {
 .user-card__buttons-wrapper {
   display: flex;
   gap: 15px;
+  padding: 12px;
 }
 
 .user-icons {
