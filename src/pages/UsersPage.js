@@ -1,12 +1,21 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import UsersList from "../components/UsersList/UsersList";
+import { loadUsersThunk } from "../redux/thunks/usersThunks";
+
 const UsersPage = ({ myNetwork = false }) => {
+  const users = useSelector((state) => state.users);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!myNetwork) {
+      dispatch(loadUsersThunk);
+    }
+  }, [dispatch, myNetwork]);
   return (
     <>
       <main className="main">
-        <h1>
-          {`USERS PAGE with a grid with: a) all users, b) only those in logged in 
-          user network (depending of props passed to
-          UsersList component myNetwork=true/false)`}
-        </h1>
+        <UsersList users={users} />
       </main>
     </>
   );
