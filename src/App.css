@@ -64,6 +64,12 @@ button:disabled {
   opacity: 50%;
 }
 
+.user-card-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
 .user-card__buttons-wrapper {
   display: flex;
   gap: 15px;

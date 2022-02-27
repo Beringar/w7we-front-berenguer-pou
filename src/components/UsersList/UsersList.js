@@ -15,7 +15,7 @@ const UsersList = ({ users }) => (
   <UsersListWrapper>
     {users.map((user) => (
       <li key={user.id}>
-        <User className="user-card" user={user} />
+        <User className="user-card-image" user={user} />
       </li>
     ))}
   </UsersListWrapper>

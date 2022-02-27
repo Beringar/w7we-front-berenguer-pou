@@ -36,6 +36,7 @@ const User = ({ className, user }) => {
         src={user.image}
         alt={user.username}
         width="300"
+        height="300"
       />
       <div className="user-card__buttons-wrapper">
         <FontAwesomeIcon
