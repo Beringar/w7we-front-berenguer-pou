@@ -9,7 +9,10 @@ const UsersPage = ({ myNetwork = false }) => {
 
   useEffect(() => {
     if (!myNetwork) {
-      dispatch(loadUsersThunk);
+      const token = localStorage.getItem("userToken");
+      if (token) {
+        dispatch(loadUsersThunk(token));
+      }
     }
   }, [dispatch, myNetwork]);
   return (
