@@ -104,7 +104,7 @@ const RegisterForm = () => {
         </div>
         <div className="form-block">
           <button type="submit" className="button" disabled={!isFilled}>
-            Login
+            Signup
           </button>
         </div>
       </form>

@@ -7,7 +7,7 @@ const Links = () => {
         <Link to="users">All Users</Link>
       </li>
       <li>
-        <Link to="/">My network</Link>
+        <Link to="mynetwork">My network</Link>
       </li>
       <li>
         <Link to="user">My profile</Link>
