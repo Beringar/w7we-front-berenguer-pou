@@ -4,6 +4,7 @@ import UsersPage from "./pages/UsersPage";
 import ProfilePage from "./pages/ProfilePage";
 import EditUserPage from "./pages/EditUserPage";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Header from "./components/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,8 +20,8 @@ function App() {
     (async () => {
       const token = localStorage.getItem("userToken");
       if (token) {
-        const { id, name, username } = await jwt_decode(token);
-        dispatch(setUserAction({ id, name, username }));
+        const { id, name, username, image } = await jwt_decode(token);
+        dispatch(setUserAction({ id, name, username, image }));
       }
     })();
   }, [dispatch]);
@@ -30,8 +31,9 @@ function App() {
       <Header user={user} />
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/mynetwork" element={<UsersPage myNetwork={true} />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/users" element={<UsersPage myNetwork={false} />} />
+        <Route path="/mynetwork" element={<UsersPage myNetwork={true} />} />
         <Route path="/user" element={<ProfilePage />}>
           <Route path=":id" element={<ProfilePage />} />
           <Route path="edit" element={<EditUserPage />} />

@@ -13,8 +13,8 @@ const UserWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 8px 20px;
-  background-color: #e0e0e0;
-  border-radius: 12px;
+  background-color: #ffffff0a;
+  border-radius: 4px;
 `;
 
 const User = ({ className, user }) => {
@@ -29,13 +29,14 @@ const User = ({ className, user }) => {
 
   return (
     <UserWrapper>
+      <h2>{user.username}</h2>
       <h3>{user.name}</h3>
-      <h4>{user.username}</h4>
       <img
         className={className}
         src={user.image}
         alt={user.username}
         width="300"
+        height="300"
       />
       <div className="user-card__buttons-wrapper">
         <FontAwesomeIcon

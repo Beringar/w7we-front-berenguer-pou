@@ -1,19 +1,26 @@
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { setUserAction } from "../../redux/actions/actionsCreators";
 import Links from "../Links/Links";
 
 const HeaderContainer = styled.header`
   display: flex;
-  height: 50px;
+  padding: 10px;
   align-items: center;
   background-color: #ccc;
   justify-content: center;
   gap: 12px;
 
+  & p {
+    margin: 0;
+  }
+
   & ul {
     display: flex;
-    width: 100%;
+    width: 60%;
     margin: 100px 0 10px 0;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 0;
     list-style: none;
@@ -45,12 +52,33 @@ const HeaderContainer = styled.header`
 `;
 
 const Header = ({ user }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem("userToken");
+    dispatch(setUserAction({}));
+    navigate("/");
+  };
   return (
     <>
-      <HeaderContainer>
-        <Links />
-        {user.username && <span>{`Logged in as ${user.username}`}</span>}
-      </HeaderContainer>
+      {user.username && (
+        <HeaderContainer>
+          <Links />
+          <img
+            className="image-avatar"
+            src={user.image}
+            height="50"
+            width="50"
+            alt={user.username}
+          />
+          <p>
+            Logged in as{" "}
+            <span className="login-name">{`${user.username}`}</span>
+          </p>
+          <button onClick={logout}>Logout</button>
+        </HeaderContainer>
+      )}
     </>
   );
 };

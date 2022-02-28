@@ -35,4 +35,9 @@ export const registerUserThunk = (user) => async (dispatch) => {
     }
   );
   await response.json();
+  if (response.ok) {
+    dispatch(
+      setUserAction({ username: user.username, password: user.password })
+    );
+  }
 };

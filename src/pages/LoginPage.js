@@ -9,13 +9,28 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (user.username) {
-      navigate("/mynetwork");
+      navigate("/users");
     }
   }, [navigate, user]);
 
+  const goToRegisterPage = () => {
+    navigate("/register");
+  };
+
   return (
     <>
-      <main className="main">{!user.username && <LoginForm />}</main>
+      <main className="main">
+        {!user.username && (
+          <>
+            <h1 className="jumbo-text">Social Network</h1>
+            <LoginForm />
+            <div className="signup-cta">
+              <h3>Dont't have an account?</h3>
+              <button onClick={goToRegisterPage}>Signup Now</button>
+            </div>
+          </>
+        )}
+      </main>
     </>
   );
 };
